@@ -1,0 +1,10 @@
+# Device-specific Obsidian window state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/cache/
+
+# Operating-system noise
+.DS_Store
+**/.DS_Store
+Thumbs.db

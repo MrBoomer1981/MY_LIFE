@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "topic-1",
+      "type": "file",
+      "x": 0,
+      "y": 190,
+      "width": 320,
+      "height": 240,
+      "file": "10 Учёба/Python/Python — имена, объекты и копирование.md",
+      "color": "3"
+    },
+    {
+      "id": "topic-2",
+      "type": "file",
+      "x": 470,
+      "y": 190,
+      "width": 320,
+      "height": 240,
+      "file": "10 Учёба/Python/Python — области видимости и функции.md",
+      "color": "4"
+    },
+    {
+      "id": "topic-3",
+      "type": "file",
+      "x": 940,
+      "y": 190,
+      "width": 320,
+      "height": 240,
+      "file": "10 Учёба/Python/Python — декораторы и композиция.md",
+      "color": "5"
+    }
+  ],
+  "edges": [
+    {
+      "id": "link-1-2",
+      "fromNode": "topic-1",
+      "toNode": "topic-2",
+      "toEnd": "arrow",
+      "label": "функции связывают имена с объектами"
+    },
+    {
+      "id": "link-2-3",
+      "fromNode": "topic-2",
+      "toNode": "topic-3",
+      "toEnd": "arrow",
+      "label": "функции можно оборачивать"
+    }
+  ]
+}

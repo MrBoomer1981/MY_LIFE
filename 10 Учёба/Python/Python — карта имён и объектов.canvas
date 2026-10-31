@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"intro","type":"text","text":"# Первый блок Python\nЧитай слева направо: от связи имени с объектом к изменению и копированию.","x":0,"y":0,"width":280,"height":115},
+		{"id":"assign","type":"file","file":"10 Учёба/Python/Присваивание и изменение.md","x":520,"y":360,"width":280,"height":280,"color":"4"},
+		{"id":"names","type":"file","file":"10 Учёба/Python/Имена и объекты.md","x":-280,"y":175,"width":280,"height":280,"color":"5"},
+		{"id":"copy","type":"file","file":"10 Учёба/Python/Копирование объектов.md","x":1240,"y":180,"width":280,"height":280,"color":"6"}
+	],
+	"edges":[
+		{"id":"names-to-assign","fromNode":"names","fromSide":"right","toNode":"assign","toSide":"left","label":"общее имя → общий объект"},
+		{"id":"assign-to-copy","fromNode":"assign","fromSide":"right","toNode":"copy","toSide":"left","label":"нужно различать связь и изменение"}
+	]
+}
