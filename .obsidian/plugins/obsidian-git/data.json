@@ -1,9 +1,0 @@
-{
-  "autoSaveInterval": 15,
-  "autoPushInterval": 15,
-  "autoPullInterval": 15,
-  "autoPullOnBoot": true,
-  "pullBeforePush": true,
-  "disablePopupsForNoChanges": true,
-  "syncMethod": "merge"
-}

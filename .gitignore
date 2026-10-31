@@ -12,3 +12,7 @@ Thumbs.db
 # Obsidian Git temporary authentication files
 .git_credentials_input*
 obsidian_askpass.sh
+
+# Mac-only Git plugin; iPhone uses GitSync
+.obsidian/community-plugins.json
+.obsidian/plugins/obsidian-git/
