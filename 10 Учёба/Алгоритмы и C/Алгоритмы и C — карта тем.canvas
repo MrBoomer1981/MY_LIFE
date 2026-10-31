@@ -1,50 +1,11 @@
 {
-  "nodes": [
-    {
-      "id": "topic-1",
-      "type": "file",
-      "x": 0,
-      "y": 190,
-      "width": 320,
-      "height": 240,
-      "file": "10 Учёба/Алгоритмы и C/От исходного текста к работающей программе.md",
-      "color": "3"
-    },
-    {
-      "id": "topic-2",
-      "type": "file",
-      "x": 470,
-      "y": 190,
-      "width": 320,
-      "height": 240,
-      "file": "10 Учёба/Алгоритмы и C/Память, указатели и представление данных.md",
-      "color": "4"
-    },
-    {
-      "id": "topic-3",
-      "type": "file",
-      "x": 940,
-      "y": 190,
-      "width": 320,
-      "height": 240,
-      "file": "10 Учёба/Алгоритмы и C/Динамический массив, список и стоимость операций.md",
-      "color": "5"
-    }
-  ],
-  "edges": [
-    {
-      "id": "link-1-2",
-      "fromNode": "topic-1",
-      "toNode": "topic-2",
-      "toEnd": "arrow",
-      "label": "программа работает с данными"
-    },
-    {
-      "id": "link-2-3",
-      "fromNode": "topic-2",
-      "toNode": "topic-3",
-      "toEnd": "arrow",
-      "label": "память определяет стоимость доступа"
-    }
-  ]
+	"nodes":[
+		{"id":"topic-1","type":"file","x":0,"y":190,"width":320,"height":240,"file":"10 Учёба/Алгоритмы и C/От исходного текста к работающей программе.md","color":"3"},
+		{"id":"topic-2","type":"file","x":470,"y":190,"width":320,"height":240,"file":"10 Учёба/Алгоритмы и C/Память, указатели и представление данных.md","color":"4"},
+		{"id":"topic-3","type":"file","x":940,"y":190,"width":320,"height":240,"file":"10 Учёба/Алгоритмы и C/Динамический массив, список и стоимость операций.md","color":"5"}
+	],
+	"edges":[
+		{"id":"link-1-2","fromNode":"topic-1","toNode":"topic-2","toEnd":"arrow","label":"программа работает с данными","fromSide":"right","toSide":"left"},
+		{"id":"link-2-3","fromNode":"topic-2","toNode":"topic-3","toEnd":"arrow","label":"память определяет стоимость доступа","fromSide":"right","toSide":"left"}
+	]
 }
