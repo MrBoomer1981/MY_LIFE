@@ -41,8 +41,263 @@
 
 ---
 
+## Проверка до действия: пример guard
+
+Даже если имя `fire` перепривязать к `None`, заранее сохранённое `backup = fire` продолжает указывать на функцию. На этом свойстве строится декоратор: исходный объект можно удержать внутри обёртки.
+
+```python
+def fire():
+    print("БАХ!")
+
+backup = fire
+fire = None
+backup()     # БАХ!
+print(fire)  # None
+```
+
+Проверка после действия не отменяет уже выполненную мутацию. В антипримере источника сначала вызывается исходная функция:
+
+```python
+def fire(agent):
+    agent["shots"] += 1
+    return "ok"
+
+def guarded(agent):
+    result = fire(agent)
+    if agent["clearance"] < 2:
+        return "denied"
+    return result
+
+j = {"clearance": 1, "shots": 0}
+print(guarded(j))   # denied
+print(j["shots"])  # 1: отказ не отменил выстрел
+```
+
+Вынесение проверки перед вызовом даёт другой поток управления:
+
+```python
+from functools import wraps
+from inspect import signature
+
+def guard(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        agent = args[0]
+        if agent["clearance"] < 2:
+            return "denied"
+        return fn(*args, **kwargs)
+    return wrapper
+
+@guard
+def fire(agent):
+    agent["shots"] += 1
+    return "ok"
+```
+
+Проверка предшествует вызову `fn`: если сначала увеличить число выстрелов, а потом вернуть отказ, действие уже выполнено. Этот первый пример читает `args[0]` и рассчитан на позиционную передачу агента; ниже приведён вариант для обоих способов вызова.
+
+Для отдельного `safe_fire = guard(original_fire)` свободная переменная `fn` у обёртки указывает на `original_fire`: `safe_fire.__code__.co_freevars` содержит `fn`, а соответствующая ячейка `safe_fire.__closure__` — исходную функцию через `cell_contents`. При записи `@guard` имя `fire` уже указывает на обёртку; сравнивать содержимое ячейки с этим новым значением имени было бы неверно.
+
+На слайдах первая обёртка имеет точную сигнатуру `wrapper(agent)` и вызывает `fn(agent)`; приведённый выше вариант обобщает передачу через `*args` и `**kwargs`. Для сохранённой исходной функции результаты introspection таковы: `safe_fire is original_fire` — `False`, `co_freevars` — `('fn',)`, `safe_fire.__closure__[0].cell_contents is original_fire` — `True`.
+
+При свежих агентах `j = {"clearance": 1, "shots": 0}` и `k = {"clearance": 3, "shots": 0}` одна обёртка выдаёт соответственно `denied 0` и `ok 1`. В первом пути исходная функция вообще не вызывается.
+
+Декорирование выполняется при каждом исполнении данного `def`, а не единожды за всё время программы. После одного определения порядок из примера таков: `decorate`, затем `ready`, затем для двух вызовов — `enter`, действие, `enter`, действие.
+
+```python
+def trace(fn):
+    print("decorate")
+    def wrapper():
+        print("enter")
+        return fn()
+    return wrapper
+
+@trace
+def fire():
+    print("БАХ!")
+
+print("ready")
+fire()
+fire()
+# decorate → ready → enter → БАХ! → enter → БАХ!
+```
+
+## Передача результата, метаданных и исключений
+
+| Ошибка | Эффект | Исправление |
+|---|---|---|
+| `fn(args, kwargs)` | Кортеж и словарь передаются как два отдельных аргумента | `fn(*args, **kwargs)` |
+| Нет `return` в обёртке | Результат теряется, возвращается `None` | `return fn(*args, **kwargs)` |
+| Нет `@wraps(fn)` | Видны имя и документация обёртки, типичная сигнатура — `(*args, **kwargs)` | `@wraps(fn)` сохраняет метаданные и `__wrapped__` |
+
+Без `wraps` имя обычно будет `wrapper`, а `__doc__` — `None`, если обёртка не имеет собственной документации. `inspect.signature` по умолчанию следует по `__wrapped__`: для исходной функции с параметрами `(parcel, *, urgent=False)` он покажет эту сигнатуру, а `bind()` без обязательного аргумента даст `TypeError`. Это механизм introspection, а не автоматическая проверка вызова самой обёртки.
+
+Исключение исходной функции, если его не перехватывают и не заменяют, проходит наружу тем же объектом. Аннотация вроде `value: int` сама не проверяет переданный тип.
+
+Исправленная передача аргументов в почтовом примере:
+
+```python
+def relay(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        return fn(*args, **kwargs)
+    return wrapper
+
+@relay
+def deliver(parcel, *, urgent=False):
+    return parcel, urgent
+
+parcel = {"item": "sugar"}
+received, urgent = deliver(parcel, urgent=True)
+print(received is parcel, urgent)  # True True
+```
+
+В ошибочном варианте `fn(args, kwargs)` передаются два позиционных аргумента функции с одним позиционным параметром и keyword-only `urgent`; возникает `TypeError` до входа в её тело.
+
+Для результата в источнике используется объект `galaxy = {"name": "Arquillian"}` и функция `locate`, возвращающая его. Если обёртка делает вызов без `return`, `result is galaxy` даёт `False`, а `result` равен `None`. После `return fn(*args, **kwargs)` получаем `True` и сам словарь `{'name': 'Arquillian'}`: обёртка передаёт прежний объект, а не копию.
+
+```python
+failure = TypeError("Сканер сломан")
+
+@relay
+def scan():
+    raise failure
+
+try:
+    scan()
+except TypeError as caught:
+    print(caught is failure)  # True
+```
+
+Для исходной `boris(target)` со строкой документации `"Найти цель Бориса."` вызов `wrapped = relay(boris)` сохраняет `wrapped.__name__ == "boris"`, соответствующую документацию и `wrapped.__wrapped__ is boris`. При этом `wrapped is boris` ложно: сохранение метаданных не превращает два объекта функций в один.
+
+## Параметризованный декоратор
+
+```python
+def requires_clearance(min_level):
+    def decorate(fn):
+        @wraps(fn)
+        def wrapper(*args, **kwargs):
+            bound = signature(fn).bind(*args, **kwargs)
+            agent = bound.arguments["agent"]
+            if agent["clearance"] < min_level:
+                return "denied"
+            return fn(*args, **kwargs)
+        return wrapper
+    return decorate
+
+@requires_clearance(2)
+def fire(agent):
+    agent["shots"] += 1
+    return "ok"
+```
+
+Сначала `requires_clearance(2)` получает настройку, затем возвращённый `decorate` принимает функцию, наконец `wrapper` выполняется при вызове. Эквивалентная запись — `fire = requires_clearance(2)(fire)` после определения исходной функции.
+
+`bind` позволяет получить агента и из `fire(j)`, и из `fire(agent=j)`. Здесь `agent` обязателен, поэтому он присутствует в `bound.arguments` после успешного связывания. У декораторов с уровнями 2 и 4 разные замкнутые значения `min_level`.
+
+Уровень агента читается заново при каждом вызове. Если повысить допуск, следующий вызов это увидит. Антипример `frozen_guard` вычисляет разрешение при оборачивании и сохраняет устаревшее решение: последующие изменения доступа не учитываются.
+
+У `open_case(agent)`, возвращающей `"ok"`, обёртки `standard = requires_clearance(2)(open_case)` и `restricted = requires_clearance(4)(open_case)` для агента с допуском 3 дают `ok`, `denied`; повторный `standard` снова даёт `ok`. Настройки независимы. У обёртки `open_archive` с порогом 2 повышение допуска одного агента с 0 до 3 меняет результат с `denied` на `ok`, в том числе при именованном вызове `open_archive(agent=k)`.
+
+```python
+def frozen_guard(fn, agent):
+    allowed = agent["clearance"] >= 2
+    def wrapper():
+        if not allowed:
+            return "denied"
+        return fn(agent)
+    return wrapper
+
+k = {"clearance": 3}
+check = frozen_guard(lambda agent: "ok", k)
+k["clearance"] = 0
+print(check())  # ok: wrapper читает прежний allowed == True
+```
+
+Замыкание удерживает и агента, и вычисленный флаг; само наличие ссылки на изменяемого агента не заставляет заново вычислять `allowed`.
+
+## Вложенные обёртки и аудит
+
+```python
+@glasses
+@flash
+def report():
+    ...
+
+# report = glasses(flash(report))
+```
+
+Порядок входа — `glasses → flash → report`, порядок нормального выхода — `report → flash → glasses`. Декораторы применяются снизу вверх, а внешняя обёртка при вызове начинает работу первой.
+
+```python
+def around(label):
+    def decorate(fn):
+        @wraps(fn)
+        def wrapper():
+            print("enter", label)
+            result = fn()
+            print("exit", label)
+            return result
+        return wrapper
+    return decorate
+
+@around("glasses")
+@around("flash")
+def report():
+    print("report")
+
+report()
+# enter glasses → enter flash → report → exit flash → exit glasses
+```
+
+Строки `exit` в этом примере выполняются только при нормальном возврате: если `fn()` выбросит исключение, выполнение не дойдёт до последующих `print`. Иллюстрация с очками и вспышкой показывает тот же принцип порядка: нужное предварительное действие должно находиться снаружи действия, которое оно предваряет.
+
+Для аудита `audit(requires_clearance(2)(action))` внешний журнал получает результат отказа `denied`. В варианте `requires_clearance(2)(audit(action))` проверка может прекратить выполнение до аудита, поэтому журнал не получит запись. Чтобы видеть весь вызов, включая отказ, аудит располагают снаружи.
+
+В исходном примере при допуске 0 оба вызова возвращают `denied`, но журналы различаются: `a == ['denied']`, `b == []`. Число выстрелов остаётся 0, исходная `action` не вызывается ни в одном случае. Простейший аудит делает `result = fn(...)`, затем `log.append(result)` и `return result`; если вызов выбрасывает исключение, последующие строки пропускаются. Следующая версия добавляет отдельную ветвь записи ошибки:
+
+```python
+def audit(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        log = signature(fn).bind(*args, **kwargs).arguments["log"]
+        try:
+            result = fn(*args, **kwargs)
+        except Exception as error:
+            log.append(("error", type(error).__name__))
+            raise
+        log.append(result)
+        return result
+    return wrapper
+```
+
+Этот пример предполагает обязательный переданный параметр `log`. `raise` без аргумента повторно поднимает перехваченное исключение. Подстановка `bound.arguments["log"] or []` теряет пустой журнал: создаётся другой список и вызывающий не видит запись.
+
+У `report(agent, *, log)`, возвращающей `"ok"`, вызов с `journal = []` в ошибочном варианте печатает `ok`, но оставляет `journal == []`. Чтение `log = bound.arguments["log"]` сохраняет ссылку на переданный список, и после вызова в нём находится `['ok']`. Нужна проверка существования или допустимости значения по смыслу параметра, а не замена любого ложного объекта.
+
+Если `except TypeError` охватывает только `bind`, он ловит ошибки формы аргументов; `TypeError` из тела функции вне этого `try` туда не попадает. Границы блока `try` определяют, какие ошибки обрабатываются.
+
+```python
+try:
+    signature(handler).bind(state, sender, *args)
+except TypeError:
+    return {"status": "denied", "reason": "bad_arguments"}
+
+return handler(state, sender, *args)
+```
+
+Это фрагмент тела диспетчера из источника, а не самостоятельный модуль. Он отличает некорректные аргументы от ошибки, возникшей уже при выполнении обработчика.
+
+Смысл схемы лекции: `audit → parse → lookup → bind → requires_role → handler`. Если требуется видеть ошибки разбора, поиска команды и проверки её аргументов, журналирование должно охватывать весь этот путь. Показанный выше декоратор `audit` перехватывает исключения только внутри `fn`: его собственный `signature(fn).bind(...)` расположен до `try`, поэтому собственная ошибка связывания в этой версии не записывается. Положение журнала и границы обработки исключений нужно учитывать вместе.
+
+Полный путь вызова включает связывание аргументов, проверку, действие и результат либо исключение. Основы: [[Python — сигнатуры и связывание аргументов]], [[Python — значения по умолчанию]].
+
 ## Источники
 
 - [[PYTHON.pdf]] — лекция 7
+- [[lecture07-mib.pdf]] — оригинальные слайды «Сначала наденьте очки»; примеры, результаты и схемы сверены непосредственно с источником.
+
+Продолжение применения декораторов: [[Python — кэширование вызовов]].
 
 Изложение переработано для понимания; пояснения не являются дословными цитатами. Полные исходные конспекты сохранены отдельно.

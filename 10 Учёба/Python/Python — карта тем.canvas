@@ -1,50 +1,32 @@
 {
-  "nodes": [
-    {
-      "id": "topic-1",
-      "type": "file",
-      "x": 0,
-      "y": 190,
-      "width": 320,
-      "height": 240,
-      "file": "10 Учёба/Python/Python — имена, объекты и копирование.md",
-      "color": "3"
-    },
-    {
-      "id": "topic-2",
-      "type": "file",
-      "x": 470,
-      "y": 190,
-      "width": 320,
-      "height": 240,
-      "file": "10 Учёба/Python/Python — области видимости и функции.md",
-      "color": "4"
-    },
-    {
-      "id": "topic-3",
-      "type": "file",
-      "x": 940,
-      "y": 190,
-      "width": 320,
-      "height": 240,
-      "file": "10 Учёба/Python/Python — декораторы и композиция.md",
-      "color": "5"
-    }
-  ],
-  "edges": [
-    {
-      "id": "link-1-2",
-      "fromNode": "topic-1",
-      "toNode": "topic-2",
-      "toEnd": "arrow",
-      "label": "функции связывают имена с объектами"
-    },
-    {
-      "id": "link-2-3",
-      "fromNode": "topic-2",
-      "toNode": "topic-3",
-      "toEnd": "arrow",
-      "label": "функции можно оборачивать"
-    }
-  ]
+	"nodes":[
+		{"id":"topic-2","type":"file","file":"10 Учёба/Python/Python — области видимости и функции.md","x":470,"y":190,"width":320,"height":240,"color":"4"},
+		{"id":"topic-3","type":"file","file":"10 Учёба/Python/Python — декораторы и композиция.md","x":940,"y":190,"width":320,"height":240,"color":"5"},
+		{"id":"python-ast","type":"file","file":"10 Учёба/Python/Python — AST, байткод и поиск атрибутов.md","x":470,"y":650,"width":340,"height":260,"color":"4"},
+		{"id":"python-defaults","type":"file","file":"10 Учёба/Python/Python — значения по умолчанию.md","x":940,"y":650,"width":340,"height":260,"color":"4"},
+		{"id":"python-signature","type":"file","file":"10 Учёба/Python/Python — сигнатуры и связывание аргументов.md","x":0,"y":1100,"width":340,"height":260,"color":"4"},
+		{"id":"python-testing","type":"file","file":"10 Учёба/Python/Python — assert, pytest и подмена имён.md","x":470,"y":1100,"width":340,"height":260,"color":"4"},
+		{"id":"topic-1","type":"file","file":"10 Учёба/Python/Python — имена, объекты и копирование.md","x":-220,"y":190,"width":320,"height":240,"color":"3"},
+		{"id":"python-life","type":"file","file":"10 Учёба/Python/Python — время жизни и сборка мусора.md","x":-230,"y":650,"width":340,"height":260,"color":"4"},
+		{"id":"python-hashtable","type":"file","file":"10 Учёба/Python/Python — поиск и устройство хеш-таблицы.md","x":-230,"y":1550,"width":340,"height":260,"color":"4"},
+		{"id":"python-hashable","type":"file","file":"10 Учёба/Python/Python — хешируемость и равенство ключей.md","x":470,"y":1550,"width":340,"height":260,"color":"4"},
+		{"id":"python-dictset","type":"file","file":"10 Учёба/Python/Python — словари, множества и отсутствующие значения.md","x":470,"y":2000,"width":340,"height":260,"color":"4"},
+		{"id":"python-cache","type":"file","file":"10 Учёба/Python/Python — кэширование вызовов.md","x":940,"y":2000,"width":340,"height":260,"color":"4"},
+		{"id":"python-indexes","type":"file","file":"10 Учёба/Python/Python — выбор ключа и согласованность индексов.md","x":920,"y":1360,"width":340,"height":260,"color":"4"}
+	],
+	"edges":[
+		{"id":"link-1-2","fromNode":"topic-1","fromSide":"right","toNode":"topic-2","toSide":"left","label":"функции связывают имена с объектами"},
+		{"id":"link-2-3","fromNode":"topic-2","fromSide":"right","toNode":"topic-3","toSide":"left","label":"функции можно оборачивать"},
+		{"id":"python-life-link","fromNode":"topic-1","fromSide":"bottom","toNode":"python-life","toSide":"top","label":"жизнь графа объектов"},
+		{"id":"python-ast-link","fromNode":"topic-2","fromSide":"bottom","toNode":"python-ast","toSide":"top","label":"анализ кода"},
+		{"id":"python-defaults-link","fromNode":"topic-2","fromSide":"bottom","toNode":"python-defaults","toSide":"top","label":"момент создания объектов"},
+		{"id":"python-signature-link","fromNode":"topic-2","fromSide":"bottom","toNode":"python-signature","toSide":"top","label":"форма вызова"},
+		{"id":"python-testing-link","fromNode":"python-ast","fromSide":"bottom","toNode":"python-testing","toSide":"top","label":"применение AST и поиска имён"},
+		{"id":"hash-table-key","fromNode":"python-hashtable","fromSide":"right","toNode":"python-hashable","toSide":"left","label":"требования к ключам"},
+		{"id":"hash-key-index","fromNode":"python-hashable","fromSide":"right","toNode":"python-indexes","toSide":"left","label":"устойчивая идентичность"},
+		{"id":"hash-key-ops","fromNode":"python-hashable","fromSide":"bottom","toNode":"python-dictset","toSide":"top","label":"ключи словаря и элементы множества"},
+		{"id":"objects-index","fromNode":"topic-1","fromSide":"bottom","toNode":"python-indexes","toSide":"top","label":"общие объекты в разных контейнерах"},
+		{"id":"decorator-cache","fromNode":"topic-3","fromSide":"right","toNode":"python-cache","toSide":"right","label":"сохранение результатов вызова"},
+		{"id":"dict-cache","fromNode":"python-dictset","fromSide":"right","toNode":"python-cache","toSide":"left","label":"словарь результатов"}
+	]
 }

@@ -1,6 +1,6 @@
 {
-  "collapse-filter": true,
-  "search": "",
+  "collapse-filter": false,
+  "search": "-path:\"99 Система/\" -path:\"00 Входящие/\" -file:AGENTS",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -11,34 +11,41 @@
       "query": "file:главная",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 11010048
       }
     },
     {
       "query": "главная",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 16746496
       }
     },
     {
       "query": "Учёба",
       "color": {
         "a": 1,
-        "rgb": 2638269
+        "rgb": 16766208
+      }
+    },
+    {
+      "query": ".canvas",
+      "color": {
+        "a": 1,
+        "rgb": 65344
       }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": false,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
+  "textFadeMultiplier": 0.4,
+  "nodeSizeMultiplier": 0.801720285969616,
+  "lineSizeMultiplier": 1.10851764968722,
   "collapse-forces": true,
   "centerStrength": 0.518713248970312,
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 1.4847942045373557,
+  "scale": 2.255362057339589,
   "close": true
 }

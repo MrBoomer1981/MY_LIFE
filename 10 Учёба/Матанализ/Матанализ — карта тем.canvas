@@ -1,13 +1,226 @@
 {
-	"nodes":[
-		{"id":"topic-1","type":"file","x":0,"y":0,"width":320,"height":240,"file":"10 Учёба/Матанализ/Логика, множества и полнота числовой прямой.md","color":"3"},
-		{"id":"topic-2","type":"file","x":0,"y":390,"width":320,"height":240,"file":"10 Учёба/Матанализ/Нормы и метрики — геометрия расстояния.md","color":"4"},
-		{"id":"topic-3","type":"file","x":470,"y":190,"width":320,"height":240,"file":"10 Учёба/Матанализ/Пределы, сходимость и ряды.md","color":"5"},
-		{"id":"topic-4","type":"file","x":940,"y":190,"width":320,"height":240,"file":"10 Учёба/Матанализ/Число e — существование предела.md","color":"6"}
-	],
-	"edges":[
-		{"id":"link-1-3","fromNode":"topic-1","toNode":"topic-3","toEnd":"arrow","label":"язык определения предела","fromSide":"right","toSide":"left"},
-		{"id":"link-2-3","fromNode":"topic-2","toNode":"topic-3","toEnd":"arrow","label":"расстояние задаёт окрестность","fromSide":"right","toSide":"left"},
-		{"id":"link-3-4","fromNode":"topic-3","toNode":"topic-4","toEnd":"arrow","label":"монотонная сходимость","fromSide":"right","toSide":"left"}
-	]
+  "nodes": [
+    {
+      "id": "topic-1",
+      "type": "file",
+      "x": 0,
+      "y": 0,
+      "width": 320,
+      "height": 240,
+      "file": "10 Учёба/Матанализ/Логика, множества и полнота числовой прямой.md",
+      "color": "3"
+    },
+    {
+      "id": "topic-2",
+      "type": "file",
+      "x": 0,
+      "y": 390,
+      "width": 320,
+      "height": 240,
+      "file": "10 Учёба/Матанализ/Нормы и метрики — геометрия расстояния.md",
+      "color": "4"
+    },
+    {
+      "id": "topic-3",
+      "type": "file",
+      "x": 470,
+      "y": 190,
+      "width": 320,
+      "height": 240,
+      "file": "10 Учёба/Матанализ/Пределы, сходимость и ряды.md",
+      "color": "5"
+    },
+    {
+      "id": "topic-4",
+      "type": "file",
+      "x": 940,
+      "y": 190,
+      "width": 320,
+      "height": 240,
+      "file": "10 Учёба/Матанализ/Число e — существование предела.md",
+      "color": "6"
+    },
+    {
+      "id": "matan-detail-0",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Вещественные числа, индукция и иррациональность.md",
+      "x": 0,
+      "y": 650,
+      "width": 380,
+      "height": 260,
+      "color": "4"
+    },
+    {
+      "id": "matan-detail-1",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Точные грани, принцип Архимеда и плотность.md",
+      "x": 520,
+      "y": 650,
+      "width": 380,
+      "height": 260,
+      "color": "4"
+    },
+    {
+      "id": "matan-detail-2",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Модуль и окрестности.md",
+      "x": 1040,
+      "y": 650,
+      "width": 380,
+      "height": 260,
+      "color": "4"
+    },
+    {
+      "id": "matan-detail-3",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Открытые и замкнутые множества.md",
+      "x": 0,
+      "y": 1050,
+      "width": 380,
+      "height": 260,
+      "color": "4"
+    },
+    {
+      "id": "matan-detail-4",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Вложенные отрезки и теорема Больцано–Вейерштрасса.md",
+      "x": 520,
+      "y": 1050,
+      "width": 380,
+      "height": 260,
+      "color": "4"
+    },
+    {
+      "id": "matan-detail-5",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Компактность и связность.md",
+      "x": 1040,
+      "y": 1050,
+      "width": 380,
+      "height": 260,
+      "color": "4"
+    },
+    {
+      "id": "matan-detail-6",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Фундаментальные последовательности и полнота.md",
+      "x": 0,
+      "y": 1450,
+      "width": 380,
+      "height": 260,
+      "color": "4"
+    },
+    {
+      "id": "matan-detail-7",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Бесконечно малые и арифметика пределов.md",
+      "x": 520,
+      "y": 1450,
+      "width": 380,
+      "height": 260,
+      "color": "4"
+    },
+    {
+      "id": "matan-detail-8",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Числовые ряды и признаки сравнения.md",
+      "x": 1040,
+      "y": 1450,
+      "width": 380,
+      "height": 260,
+      "color": "4"
+    }
+  ],
+  "edges": [
+    {
+      "id": "link-1-3",
+      "fromNode": "topic-1",
+      "toNode": "topic-3",
+      "toEnd": "arrow",
+      "label": "язык определения предела",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "link-2-3",
+      "fromNode": "topic-2",
+      "toNode": "topic-3",
+      "toEnd": "arrow",
+      "label": "расстояние задаёт окрестность",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "link-3-4",
+      "fromNode": "topic-3",
+      "toNode": "topic-4",
+      "toEnd": "arrow",
+      "label": "монотонная сходимость",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "matan-detail-0-link",
+      "fromNode": "topic-1",
+      "toNode": "matan-detail-0",
+      "toEnd": "arrow",
+      "label": "подробное изложение"
+    },
+    {
+      "id": "matan-detail-1-link",
+      "fromNode": "topic-1",
+      "toNode": "matan-detail-1",
+      "toEnd": "arrow",
+      "label": "подробное изложение"
+    },
+    {
+      "id": "matan-detail-2-link",
+      "fromNode": "topic-2",
+      "toNode": "matan-detail-2",
+      "toEnd": "arrow",
+      "label": "подробное изложение"
+    },
+    {
+      "id": "matan-detail-3-link",
+      "fromNode": "topic-2",
+      "toNode": "matan-detail-3",
+      "toEnd": "arrow",
+      "label": "подробное изложение"
+    },
+    {
+      "id": "matan-detail-4-link",
+      "fromNode": "topic-2",
+      "toNode": "matan-detail-4",
+      "toEnd": "arrow",
+      "label": "подробное изложение"
+    },
+    {
+      "id": "matan-detail-5-link",
+      "fromNode": "topic-2",
+      "toNode": "matan-detail-5",
+      "toEnd": "arrow",
+      "label": "подробное изложение"
+    },
+    {
+      "id": "matan-detail-6-link",
+      "fromNode": "topic-3",
+      "toNode": "matan-detail-6",
+      "toEnd": "arrow",
+      "label": "подробное изложение"
+    },
+    {
+      "id": "matan-detail-7-link",
+      "fromNode": "topic-3",
+      "toNode": "matan-detail-7",
+      "toEnd": "arrow",
+      "label": "подробное изложение"
+    },
+    {
+      "id": "matan-detail-8-link",
+      "fromNode": "topic-3",
+      "toNode": "matan-detail-8",
+      "toEnd": "arrow",
+      "label": "подробное изложение"
+    }
+  ]
 }
