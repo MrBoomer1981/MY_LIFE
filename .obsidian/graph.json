@@ -22,7 +22,7 @@
       }
     },
     {
-      "query": "Учёба",
+      "query": "учёба",
       "color": {
         "a": 1,
         "rgb": 16766208
@@ -46,6 +46,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 1.4694665655318453,
-  "close": true
+  "scale": 1.0433245863200784,
+  "close": false
 }
