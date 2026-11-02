@@ -6,46 +6,17 @@
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [
-    {
-      "query": "file:главная",
-      "color": {
-        "a": 1,
-        "rgb": 11010048
-      }
-    },
-    {
-      "query": "главная",
-      "color": {
-        "a": 1,
-        "rgb": 16746496
-      }
-    },
-    {
-      "query": "учёба",
-      "color": {
-        "a": 1,
-        "rgb": 16766208
-      }
-    },
-    {
-      "query": ".canvas",
-      "color": {
-        "a": 1,
-        "rgb": 65344
-      }
-    }
-  ],
+  "colorGroups": [],
   "collapse-display": true,
   "showArrow": false,
-  "textFadeMultiplier": 0.4,
-  "nodeSizeMultiplier": 0.801720285969616,
-  "lineSizeMultiplier": 1.10851764968722,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
   "collapse-forces": true,
   "centerStrength": 0.518713248970312,
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.5105019740423777,
-  "close": false
+  "scale": 0.7238835842365189,
+  "close": true
 }
