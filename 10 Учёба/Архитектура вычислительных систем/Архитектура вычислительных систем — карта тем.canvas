@@ -1,21 +1,142 @@
 {
-	"nodes":[
-		{"id":"topic-1","type":"file","file":"10 Учёба/Архитектура вычислительных систем/Инфраструктура как система слоёв.md","x":-660,"y":190,"width":320,"height":240,"color":"3"},
-		{"id":"topic-3","type":"file","file":"10 Учёба/Архитектура вычислительных систем/Распределённая система — сеть, контейнеры и обмен данными.md","x":1360,"y":190,"width":320,"height":240,"color":"5"},
-		{"id":"storage-expanded-0","type":"file","file":"10 Учёба/Архитектура вычислительных систем/Накопители и дисковые интерфейсы.md","x":100,"y":650,"width":360,"height":240,"color":"4"},
-		{"id":"storage-expanded-1","type":"file","file":"10 Учёба/Архитектура вычислительных систем/DAS, NAS и SAN.md","x":530,"y":650,"width":360,"height":240,"color":"4"},
-		{"id":"storage-expanded-2","type":"file","file":"10 Учёба/Архитектура вычислительных систем/RAID и логические тома.md","x":960,"y":650,"width":360,"height":240,"color":"4"},
-		{"id":"storage-expanded-3","type":"file","file":"10 Учёба/Архитектура вычислительных систем/Производительность дисковой подсистемы.md","x":1390,"y":650,"width":360,"height":240,"color":"4"},
-		{"id":"avs-glossary","type":"file","file":"10 Учёба/Архитектура вычислительных систем/АВС — глоссарий.md","x":-660,"y":650,"width":320,"height":240,"color":"3"},
-		{"id":"topic-2","type":"file","file":"10 Учёба/Архитектура вычислительных систем/Процессор, память и хранение данных.md","x":460,"y":-80,"width":320,"height":240,"color":"4"}
-	],
-	"edges":[
-		{"id":"link-1-2","fromNode":"topic-1","fromSide":"right","toNode":"topic-2","toSide":"left","label":"слои используют ресурсы"},
-		{"id":"link-2-3","fromNode":"topic-2","fromSide":"right","toNode":"topic-3","toSide":"left","label":"ресурсы распределены между узлами"},
-		{"id":"storage-link-0","fromNode":"topic-2","fromSide":"bottom","toNode":"storage-expanded-0","toSide":"top","label":"подробности хранения"},
-		{"id":"storage-link-1","fromNode":"topic-2","fromSide":"bottom","toNode":"storage-expanded-1","toSide":"top","label":"подробности хранения"},
-		{"id":"storage-link-2","fromNode":"topic-2","fromSide":"bottom","toNode":"storage-expanded-2","toSide":"top","label":"подробности хранения"},
-		{"id":"storage-link-3","fromNode":"topic-2","fromSide":"bottom","toNode":"storage-expanded-3","toSide":"top","label":"подробности хранения"},
-		{"id":"glossary-link","fromNode":"topic-1","fromSide":"bottom","toNode":"avs-glossary","toSide":"top","label":"термины"}
-	]
+  "nodes": [
+    {
+      "id": "topic-1",
+      "type": "file",
+      "file": "10 Учёба/Архитектура вычислительных систем/Инфраструктура как система слоёв.md",
+      "x": -660,
+      "y": 190,
+      "width": 320,
+      "height": 240,
+      "color": "3"
+    },
+    {
+      "id": "topic-3",
+      "type": "file",
+      "file": "10 Учёба/Архитектура вычислительных систем/Распределённая система — сеть, контейнеры и обмен данными.md",
+      "x": 1360,
+      "y": 190,
+      "width": 320,
+      "height": 240,
+      "color": "5"
+    },
+    {
+      "id": "storage-expanded-0",
+      "type": "file",
+      "file": "10 Учёба/Архитектура вычислительных систем/Накопители и дисковые интерфейсы.md",
+      "x": 100,
+      "y": 650,
+      "width": 360,
+      "height": 240,
+      "color": "4"
+    },
+    {
+      "id": "storage-expanded-1",
+      "type": "file",
+      "file": "10 Учёба/Архитектура вычислительных систем/DAS, NAS и SAN.md",
+      "x": 530,
+      "y": 650,
+      "width": 360,
+      "height": 240,
+      "color": "4"
+    },
+    {
+      "id": "storage-expanded-2",
+      "type": "file",
+      "file": "10 Учёба/Архитектура вычислительных систем/RAID и логические тома.md",
+      "x": 960,
+      "y": 650,
+      "width": 360,
+      "height": 240,
+      "color": "4"
+    },
+    {
+      "id": "storage-expanded-3",
+      "type": "file",
+      "file": "10 Учёба/Архитектура вычислительных систем/Производительность дисковой подсистемы.md",
+      "x": 1390,
+      "y": 650,
+      "width": 360,
+      "height": 240,
+      "color": "4"
+    },
+    {
+      "id": "avs-glossary",
+      "type": "file",
+      "file": "10 Учёба/Архитектура вычислительных систем/АВС — глоссарий.md",
+      "x": -660,
+      "y": 650,
+      "width": 320,
+      "height": 240,
+      "color": "3"
+    },
+    {
+      "id": "topic-2",
+      "type": "file",
+      "file": "10 Учёба/Архитектура вычислительных систем/Процессор, память и хранение данных.md",
+      "x": 460,
+      "y": -80,
+      "width": 320,
+      "height": 240,
+      "color": "4"
+    }
+  ],
+  "edges": [
+    {
+      "id": "link-1-2",
+      "fromNode": "topic-1",
+      "toNode": "topic-2",
+      "label": "слои используют ресурсы",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "link-2-3",
+      "fromNode": "topic-2",
+      "toNode": "topic-3",
+      "label": "ресурсы распределены между узлами",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "storage-link-0",
+      "fromNode": "topic-2",
+      "fromSide": "bottom",
+      "toNode": "storage-expanded-0",
+      "toSide": "top",
+      "label": "подробности хранения"
+    },
+    {
+      "id": "storage-link-1",
+      "fromNode": "topic-2",
+      "fromSide": "bottom",
+      "toNode": "storage-expanded-1",
+      "toSide": "top",
+      "label": "подробности хранения"
+    },
+    {
+      "id": "storage-link-2",
+      "fromNode": "topic-2",
+      "fromSide": "bottom",
+      "toNode": "storage-expanded-2",
+      "toSide": "top",
+      "label": "подробности хранения"
+    },
+    {
+      "id": "storage-link-3",
+      "fromNode": "topic-2",
+      "fromSide": "bottom",
+      "toNode": "storage-expanded-3",
+      "toSide": "top",
+      "label": "подробности хранения"
+    },
+    {
+      "id": "glossary-link",
+      "fromNode": "topic-1",
+      "fromSide": "bottom",
+      "toNode": "avs-glossary",
+      "toSide": "top",
+      "label": "термины"
+    }
+  ]
 }
