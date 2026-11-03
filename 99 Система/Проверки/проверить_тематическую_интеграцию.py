@@ -20,6 +20,8 @@ APPENDIX = re.compile(
     r'|\b20\d{2}-\d{2}-\d{2}\b', re.IGNORECASE
 )
 SOURCES = re.compile(r'^(?:полные\s+)?источники?\b', re.IGNORECASE)
+# Этот раздел содержит обратные ссылки, а не продолжение учебной теории.
+NAVIGATION = {'Соответствие официальным билетам'}
 
 
 def markdown_lines(text: str) -> list[str]:
@@ -96,7 +98,7 @@ def validate(vault: Path, overview: Path, coverage: Path | None = None) -> list[
             if len(match[1]) == 2:
                 if SOURCES.match(title):
                     source_section_seen = True
-                elif source_section_seen:
+                elif source_section_seen and title not in NAVIGATION:
                     errors.append(f'{name}: тематический раздел «{title}» стоит после источников.')
         if note != overview and note not in normal:
             errors.append(f'{name}: нет ссылки в основном тематическом оглавлении курса.')
