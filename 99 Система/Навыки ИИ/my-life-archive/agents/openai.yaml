@@ -1,6 +1,0 @@
-interface:
-  display_name: "Материал в тематический архив"
-  short_description: "Вся теория и доказательства без расширенных пояснений"
-  default_prompt: "Используй $my-life-archive, чтобы сохранить эти материалы полностью по темам без дополнительных объяснений."
-policy:
-  allow_implicit_invocation: true

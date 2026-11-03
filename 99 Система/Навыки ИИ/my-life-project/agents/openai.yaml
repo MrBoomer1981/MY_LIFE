@@ -1,6 +1,0 @@
-interface:
-  display_name: "Описание проекта"
-  short_description: "Идея, стек и мини-презентация для смешанной аудитории"
-  default_prompt: "Используй $my-life-project, чтобы оформить этот проект и его основной стек для мини-презентации."
-policy:
-  allow_implicit_invocation: true
