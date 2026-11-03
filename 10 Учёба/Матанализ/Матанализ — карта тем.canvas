@@ -129,6 +129,26 @@
       "width": 380,
       "height": 260,
       "color": "4"
+    },
+    {
+      "id": "matan-function-limit",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Предел функции и теорема о зажатой функции.md",
+      "x": 0,
+      "y": 1850,
+      "width": 380,
+      "height": 260,
+      "color": "5"
+    },
+    {
+      "id": "matan-sine-limit",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Первый замечательный предел.md",
+      "x": 520,
+      "y": 1850,
+      "width": 380,
+      "height": 260,
+      "color": "5"
     }
   ],
   "edges": [
@@ -221,6 +241,27 @@
       "toNode": "matan-detail-8",
       "toEnd": "arrow",
       "label": "подробное изложение"
+    },
+    {
+      "id": "matan-function-from-sequences",
+      "fromNode": "topic-3",
+      "toNode": "matan-function-limit",
+      "toEnd": "arrow",
+      "label": "предел функции и зажатие"
+    },
+    {
+      "id": "matan-function-to-sine",
+      "fromNode": "matan-function-limit",
+      "toNode": "matan-sine-limit",
+      "toEnd": "arrow",
+      "label": "геометрические оценки"
+    },
+    {
+      "id": "matan-function-to-e",
+      "fromNode": "matan-function-limit",
+      "toNode": "topic-4",
+      "toEnd": "arrow",
+      "label": "зажатие через целую часть"
     }
   ]
 }
