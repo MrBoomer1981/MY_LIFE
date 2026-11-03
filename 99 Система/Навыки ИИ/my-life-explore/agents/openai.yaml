@@ -1,0 +1,6 @@
+interface:
+  display_name: "Разбор темы или идеи проекта"
+  short_description: "Реализуемость, ограничения и каркас будущего проекта"
+  default_prompt: "Используй $my-life-explore, чтобы разобрать эту ссылку или идею и сохранить результат в базе."
+policy:
+  allow_implicit_invocation: true
