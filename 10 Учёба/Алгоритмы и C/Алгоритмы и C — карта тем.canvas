@@ -1,202 +1,28 @@
 {
-  "nodes": [
-    {
-      "id": "topic-1",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/От исходного текста к работающей программе.md",
-      "x": 0,
-      "y": 190,
-      "width": 320,
-      "height": 240,
-      "color": "3"
-    },
-    {
-      "id": "topic-2",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/Память, указатели и представление данных.md",
-      "x": 470,
-      "y": 190,
-      "width": 320,
-      "height": 240,
-      "color": "4"
-    },
-    {
-      "id": "topic-3",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/Динамический массив, список и стоимость операций.md",
-      "x": 940,
-      "y": 190,
-      "width": 320,
-      "height": 240,
-      "color": "5"
-    },
-    {
-      "id": "algos-detail-0",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/Функции, переменные и управление потоком в C.md",
-      "x": 0,
-      "y": 650,
-      "width": 360,
-      "height": 270,
-      "color": "4"
-    },
-    {
-      "id": "algos-detail-1",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/Строки, библиотеки и разделение программы на файлы.md",
-      "x": 500,
-      "y": 650,
-      "width": 360,
-      "height": 270,
-      "color": "4"
-    },
-    {
-      "id": "algos-detail-3",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/Vector — устройство и операции.md",
-      "x": 0,
-      "y": 1070,
-      "width": 360,
-      "height": 270,
-      "color": "4"
-    },
-    {
-      "id": "algos-object-representation",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/Представление объектов и расход памяти в C и Python.md",
-      "x": 1460,
-      "y": 190,
-      "width": 400,
-      "height": 310,
-      "color": "4"
-    },
-    {
-      "id": "algos-detail-2",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/Тестирование и корректность программ на C.md",
-      "x": 1500,
-      "y": 650,
-      "width": 360,
-      "height": 270,
-      "color": "4"
-    },
-    {
-      "id": "algos-detail-5",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/Чтение чисел из файла и скользящее среднее.md",
-      "x": 1320,
-      "y": 1070,
-      "width": 360,
-      "height": 270,
-      "color": "4"
-    },
-    {
-      "id": "algos-detail-4",
-      "type": "file",
-      "file": "10 Учёба/Алгоритмы и C/Обобщённый связный список и функции сравнения.md",
-      "x": 790,
-      "y": 1070,
-      "width": 360,
-      "height": 270,
-      "color": "4"
-    }
-  ],
-  "edges": [
-    {
-      "id": "link-1-2",
-      "fromNode": "topic-1",
-      "toNode": "topic-2",
-      "label": "программа работает с данными",
-      "fromSide": "right",
-      "toSide": "left"
-    },
-    {
-      "id": "link-2-3",
-      "fromNode": "topic-2",
-      "toNode": "topic-3",
-      "label": "память определяет стоимость доступа",
-      "fromSide": "right",
-      "toSide": "left"
-    },
-    {
-      "id": "algos-detail-0-link",
-      "fromNode": "topic-1",
-      "fromSide": "bottom",
-      "toNode": "algos-detail-0",
-      "toSide": "top",
-      "label": "подробное изложение"
-    },
-    {
-      "id": "algos-detail-1-link",
-      "fromNode": "topic-2",
-      "fromSide": "bottom",
-      "toNode": "algos-detail-1",
-      "toSide": "top",
-      "label": "подробное изложение"
-    },
-    {
-      "id": "algos-detail-2-link",
-      "fromNode": "topic-3",
-      "fromSide": "bottom",
-      "toNode": "algos-detail-2",
-      "toSide": "top",
-      "label": "подробное изложение"
-    },
-    {
-      "id": "algos-detail-3-link",
-      "fromNode": "topic-3",
-      "fromSide": "bottom",
-      "toNode": "algos-detail-3",
-      "toSide": "top",
-      "label": "подробное изложение"
-    },
-    {
-      "id": "algos-detail-4-link",
-      "fromNode": "topic-3",
-      "fromSide": "bottom",
-      "toNode": "algos-detail-4",
-      "toSide": "top",
-      "label": "подробное изложение"
-    },
-    {
-      "id": "algos-detail-5-link",
-      "fromNode": "topic-3",
-      "fromSide": "bottom",
-      "toNode": "algos-detail-5",
-      "toSide": "top",
-      "label": "подробное изложение"
-    },
-    {
-      "id": "algos-memory-model",
-      "fromNode": "topic-2",
-      "fromSide": "right",
-      "toNode": "algos-object-representation",
-      "toSide": "left",
-      "label": "значение и объект в памяти"
-    },
-    {
-      "id": "algos-memory-cost",
-      "fromNode": "algos-object-representation",
-      "fromSide": "left",
-      "toNode": "topic-3",
-      "toSide": "right",
-      "label": "накладные расходы контейнера"
-    },
-    {
-      "id": "algos-vector-list",
-      "fromNode": "algos-detail-3",
-      "fromSide": "right",
-      "toNode": "algos-detail-4",
-      "toSide": "left",
-      "label": "обобщённое хранение и адреса"
-    },
-    {
-      "id": "algos-list-window",
-      "fromNode": "algos-detail-4",
-      "fromSide": "right",
-      "toNode": "algos-detail-5",
-      "toSide": "left",
-      "label": "очередь окна"
-    }
-  ]
+	"nodes":[
+		{"id":"topic-1","type":"file","file":"10 Учёба/Алгоритмы и C/От исходного текста к работающей программе.md","x":0,"y":190,"width":320,"height":240,"color":"3"},
+		{"id":"topic-2","type":"file","file":"10 Учёба/Алгоритмы и C/Память, указатели и представление данных.md","x":470,"y":190,"width":320,"height":240,"color":"4"},
+		{"id":"topic-3","type":"file","file":"10 Учёба/Алгоритмы и C/Динамический массив, список и стоимость операций.md","x":940,"y":190,"width":320,"height":240,"color":"5"},
+		{"id":"algos-detail-0","type":"file","file":"10 Учёба/Алгоритмы и C/Функции, переменные и управление потоком в C.md","x":0,"y":650,"width":360,"height":270,"color":"4"},
+		{"id":"algos-detail-1","type":"file","file":"10 Учёба/Алгоритмы и C/Строки, библиотеки и разделение программы на файлы.md","x":500,"y":650,"width":360,"height":270,"color":"4"},
+		{"id":"algos-detail-3","type":"file","file":"10 Учёба/Алгоритмы и C/Vector — устройство и операции.md","x":0,"y":1070,"width":360,"height":270,"color":"4"},
+		{"id":"algos-object-representation","type":"file","file":"10 Учёба/Алгоритмы и C/Представление объектов и расход памяти в C и Python.md","x":1460,"y":190,"width":400,"height":310,"color":"4"},
+		{"id":"algos-detail-2","type":"file","file":"10 Учёба/Алгоритмы и C/Тестирование и корректность программ на C.md","x":1500,"y":650,"width":360,"height":270,"color":"4"},
+		{"id":"algos-detail-5","type":"file","file":"10 Учёба/Алгоритмы и C/Чтение чисел из файла и скользящее среднее.md","x":1320,"y":1070,"width":360,"height":270,"color":"4"},
+		{"id":"algos-detail-4","type":"file","file":"10 Учёба/Алгоритмы и C/Обобщённый связный список и функции сравнения.md","x":790,"y":1070,"width":360,"height":270,"color":"4"}
+	],
+	"edges":[
+		{"id":"link-1-2","fromNode":"topic-1","toNode":"topic-2","label":"программа работает с данными","fromSide":"right","toSide":"left"},
+		{"id":"link-2-3","fromNode":"topic-2","toNode":"topic-3","label":"память определяет стоимость доступа","fromSide":"right","toSide":"left"},
+		{"id":"algos-detail-0-link","fromNode":"topic-1","fromSide":"bottom","toNode":"algos-detail-0","toSide":"top","label":"подробное изложение"},
+		{"id":"algos-detail-1-link","fromNode":"topic-2","fromSide":"bottom","toNode":"algos-detail-1","toSide":"top","label":"подробное изложение"},
+		{"id":"algos-detail-2-link","fromNode":"topic-3","fromSide":"bottom","toNode":"algos-detail-2","toSide":"top","label":"подробное изложение"},
+		{"id":"algos-detail-3-link","fromNode":"topic-3","fromSide":"bottom","toNode":"algos-detail-3","toSide":"top","label":"подробное изложение"},
+		{"id":"algos-detail-4-link","fromNode":"topic-3","fromSide":"bottom","toNode":"algos-detail-4","toSide":"top","label":"подробное изложение"},
+		{"id":"algos-detail-5-link","fromNode":"topic-3","fromSide":"bottom","toNode":"algos-detail-5","toSide":"top","label":"подробное изложение"},
+		{"id":"algos-memory-model","fromNode":"topic-2","fromSide":"right","toNode":"algos-object-representation","toSide":"left","label":"значение и объект в памяти"},
+		{"id":"algos-memory-cost","fromNode":"algos-object-representation","fromSide":"left","toNode":"topic-3","toSide":"right","label":"накладные расходы контейнера"},
+		{"id":"algos-vector-list","fromNode":"algos-detail-3","fromSide":"right","toNode":"algos-detail-4","toSide":"left","label":"обобщённое хранение и адреса"},
+		{"id":"algos-list-window","fromNode":"algos-detail-4","fromSide":"right","toNode":"algos-detail-5","toSide":"left","label":"очередь окна"}
+	]
 }
