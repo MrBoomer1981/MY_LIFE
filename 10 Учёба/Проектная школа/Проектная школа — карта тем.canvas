@@ -1,0 +1,27 @@
+{
+	"nodes":[
+		{"id":"ps-course","type":"file","file":"10 Учёба/Проектная школа/Проектная школа.md","x":450,"y":-350,"width":400,"height":220,"color":"2"},
+		{"id":"ps-1","type":"file","file":"10 Учёба/Проектная школа/Данные и принятие продуктовых решений.md","x":0,"y":0,"width":400,"height":250,"color":"4"},
+		{"id":"ps-2","type":"file","file":"10 Учёба/Проектная школа/Типы данных и смысл признаков.md","x":500,"y":0,"width":400,"height":250,"color":"4"},
+		{"id":"ps-3","type":"file","file":"10 Учёба/Проектная школа/Источники данных и аналитическое хранилище.md","x":1000,"y":0,"width":400,"height":250,"color":"4"},
+		{"id":"ps-4","type":"file","file":"10 Учёба/Проектная школа/Метрики, BI и проверка продуктовых гипотез.md","x":0,"y":400,"width":400,"height":250,"color":"4"},
+		{"id":"ps-5","type":"file","file":"10 Учёба/Проектная школа/Модель данных сервиса временной занятости.md","x":500,"y":400,"width":400,"height":250,"color":"4"},
+		{"id":"ps-6","type":"file","file":"10 Учёба/Проектная школа/SQL и блокноты в работе аналитика.md","x":1000,"y":400,"width":400,"height":250,"color":"4"}
+	],
+	"edges":[
+		{"id":"ps-hub-1","fromNode":"ps-course","toNode":"ps-1","fromSide":"bottom","toSide":"top","label":"тема курса"},
+		{"id":"ps-hub-2","fromNode":"ps-course","toNode":"ps-2","fromSide":"bottom","toSide":"top","label":"тема курса"},
+		{"id":"ps-hub-3","fromNode":"ps-course","toNode":"ps-3","fromSide":"bottom","toSide":"top","label":"тема курса"},
+		{"id":"ps-hub-4","fromNode":"ps-course","toNode":"ps-4","fromSide":"bottom","toSide":"top","label":"тема курса"},
+		{"id":"ps-hub-5","fromNode":"ps-course","toNode":"ps-5","fromSide":"bottom","toSide":"top","label":"тема курса"},
+		{"id":"ps-hub-6","fromNode":"ps-course","toNode":"ps-6","fromSide":"bottom","toSide":"top","label":"тема курса"},
+		{"id":"ps-rel-0","fromNode":"ps-1","toNode":"ps-2","fromSide":"right","toSide":"left","label":"смысл наблюдений"},
+		{"id":"ps-rel-1","fromNode":"ps-2","toNode":"ps-5","fromSide":"right","toSide":"left","label":"единица строки"},
+		{"id":"ps-rel-2","fromNode":"ps-3","toNode":"ps-5","fromSide":"right","toSide":"left","label":"структура источников"},
+		{"id":"ps-rel-3","fromNode":"ps-5","toNode":"ps-4","fromSide":"right","toSide":"left","label":"корректный подсчёт"},
+		{"id":"ps-rel-4","fromNode":"ps-3","toNode":"ps-4","fromSide":"right","toSide":"left","label":"витрины для метрик"},
+		{"id":"ps-rel-5","fromNode":"ps-3","toNode":"ps-6","fromSide":"right","toSide":"left","label":"доступ к данным"},
+		{"id":"ps-rel-6","fromNode":"ps-5","toNode":"ps-6","fromSide":"right","toSide":"left","label":"соединения и агрегации"},
+		{"id":"ps-rel-7","fromNode":"ps-4","toNode":"ps-1","fromSide":"right","toSide":"left","label":"проверка и решение"}
+	]
+}
