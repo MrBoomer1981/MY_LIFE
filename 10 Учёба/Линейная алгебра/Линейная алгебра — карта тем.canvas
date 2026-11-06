@@ -28,7 +28,12 @@
 		{"id":"t21","type":"file","file":"10 Учёба/Линейная алгебра/Прямые суммы и дополнения подпространств.md","x":1920,"y":1470,"width":560,"height":155},
 		{"id":"t22","type":"file","file":"10 Учёба/Линейная алгебра/Проекции и проекторы.md","x":1920,"y":1680,"width":560,"height":155},
 		{"id":"t23","type":"file","file":"10 Учёба/Линейная алгебра/Обозначения и уточнения в линейной алгебре.md","x":0,"y":1500,"width":560,"height":155},
-		{"id":"official_algebra_tickets","type":"file","file":"10 Учёба/Линейная алгебра/Билеты по алгебре.md","x":0,"y":1750,"width":560,"height":155}
+		{"id":"official_algebra_tickets","type":"file","file":"10 Учёба/Линейная алгебра/Билеты по алгебре.md","x":0,"y":1750,"width":560,"height":155},
+		{"id":"lect2026_0","type":"file","file":"10 Учёба/Линейная алгебра/Корни многочленов и разложение на множители.md","x":2600,"y":0,"width":560,"height":190},
+		{"id":"lect2026_1","type":"file","file":"10 Учёба/Линейная алгебра/Модули над кольцами.md","x":2600,"y":270,"width":560,"height":190},
+		{"id":"lect2026_2","type":"file","file":"10 Учёба/Линейная алгебра/Линейные многообразия.md","x":2600,"y":540,"width":560,"height":190},
+		{"id":"lect2026_3","type":"file","file":"10 Учёба/Линейная алгебра/Линейные формы и сопряжённое пространство.md","x":2600,"y":810,"width":560,"height":190},
+		{"id":"lect2026_4","type":"file","file":"10 Учёба/Линейная алгебра/Замена базиса и преобразование координат.md","x":2600,"y":1080,"width":560,"height":190}
 	],
 	"edges":[
 		{"id":"e0_1","fromNode":"t0","toNode":"t1","fromSide":"bottom","toSide":"top","toEnd":"arrow","label":"аксиомы"},
@@ -52,6 +57,14 @@
 		{"id":"e16_20","fromNode":"t16","toNode":"t20","fromSide":"bottom","toSide":"top","toEnd":"arrow","label":"подсчёт размерностей"},
 		{"id":"e20_21","fromNode":"t20","toNode":"t21","fromSide":"bottom","toSide":"top","toEnd":"arrow","label":"нулевое пересечение"},
 		{"id":"e21_22","fromNode":"t21","toNode":"t22","fromSide":"bottom","toSide":"top","toEnd":"arrow","label":"компоненты разложения"},
-		{"id":"e17_22","fromNode":"t17","toNode":"t22","fromSide":"bottom","toSide":"top","toEnd":"arrow","label":"линейный оператор"}
+		{"id":"e17_22","fromNode":"t17","toNode":"t22","fromSide":"bottom","toSide":"top","toEnd":"arrow","label":"линейный оператор"},
+		{"id":"lect2026_edge0","fromNode":"t9","fromSide":"right","toNode":"lect2026_0","toSide":"left"},
+		{"id":"lect2026_edge1","fromNode":"t4","fromSide":"right","toNode":"lect2026_1","toSide":"left"},
+		{"id":"lect2026_edge2","fromNode":"lect2026_1","fromSide":"right","toNode":"t14","toSide":"left"},
+		{"id":"lect2026_edge3","fromNode":"t14","fromSide":"right","toNode":"lect2026_2","toSide":"left"},
+		{"id":"lect2026_edge4","fromNode":"t16","fromSide":"right","toNode":"lect2026_3","toSide":"left"},
+		{"id":"lect2026_edge5","fromNode":"lect2026_3","fromSide":"right","toNode":"lect2026_4","toSide":"left"},
+		{"id":"lect2026_edge6","fromNode":"lect2026_2","fromSide":"right","toNode":"t12","toSide":"left"},
+		{"id":"lect2026_edge7","fromNode":"lect2026_1","fromSide":"right","toNode":"t19","toSide":"left"}
 	]
 }
