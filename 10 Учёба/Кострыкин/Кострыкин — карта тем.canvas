@@ -17,6 +17,15 @@
       "y": 300,
       "width": 480,
       "height": 220
+    },
+    {
+      "id": "sets",
+      "type": "file",
+      "file": "10 Учёба/Кострыкин/Множества и отображения.md",
+      "x": 600,
+      "y": 300,
+      "width": 480,
+      "height": 220
     }
   ],
   "edges": [
@@ -25,6 +34,13 @@
       "fromNode": "course",
       "fromSide": "bottom",
       "toNode": "systems",
+      "toSide": "top"
+    },
+    {
+      "id": "contains-sets",
+      "fromNode": "course",
+      "fromSide": "bottom",
+      "toNode": "sets",
       "toSide": "top"
     }
   ]
