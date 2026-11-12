@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "course",
+      "type": "file",
+      "file": "10 Учёба/Кострыкин/Кострыкин.md",
+      "x": 0,
+      "y": 0,
+      "width": 420,
+      "height": 180
+    },
+    {
+      "id": "systems",
+      "type": "file",
+      "file": "10 Учёба/Кострыкин/Системы линейных уравнений. Первые шаги.md",
+      "x": 0,
+      "y": 300,
+      "width": 480,
+      "height": 220
+    }
+  ],
+  "edges": [
+    {
+      "id": "contains",
+      "fromNode": "course",
+      "fromSide": "bottom",
+      "toNode": "systems",
+      "toSide": "top"
+    }
+  ]
+}
