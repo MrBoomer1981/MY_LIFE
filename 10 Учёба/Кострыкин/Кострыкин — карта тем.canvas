@@ -1,11 +1,102 @@
 {
-	"nodes":[
-		{"id":"course","type":"file","file":"10 Учёба/Кострыкин/Кострыкин.md","x":0,"y":0,"width":420,"height":180},
-		{"id":"systems","type":"file","file":"10 Учёба/Кострыкин/Системы линейных уравнений. Первые шаги.md","x":0,"y":300,"width":480,"height":220},
-		{"id":"sets","type":"file","file":"10 Учёба/Кострыкин/Множества и отображения.md","x":600,"y":300,"width":480,"height":220}
-	],
-	"edges":[
-		{"id":"contains","fromNode":"course","fromSide":"bottom","toNode":"systems","toSide":"top"},
-		{"id":"contains-sets","fromNode":"course","fromSide":"bottom","toNode":"sets","toSide":"top"}
-	]
+  "nodes": [
+    {
+      "id": "course",
+      "type": "file",
+      "file": "10 Учёба/Кострыкин/Кострыкин.md",
+      "x": 0,
+      "y": 0,
+      "width": 420,
+      "height": 180
+    },
+    {
+      "id": "systems",
+      "type": "file",
+      "file": "10 Учёба/Кострыкин/Системы линейных уравнений. Первые шаги.md",
+      "x": 0,
+      "y": 300,
+      "width": 480,
+      "height": 220
+    },
+    {
+      "id": "sets",
+      "type": "file",
+      "file": "10 Учёба/Кострыкин/Множества и отображения.md",
+      "x": 600,
+      "y": 300,
+      "width": 480,
+      "height": 220
+    },
+    {
+      "id": "new-0",
+      "type": "file",
+      "file": "10 Учёба/Кострыкин/Перестановки и циклы.md",
+      "x": 0,
+      "y": 650,
+      "width": 480,
+      "height": 220
+    },
+    {
+      "id": "new-1",
+      "type": "file",
+      "file": "10 Учёба/Кострыкин/Знак перестановки и кососимметрические функции.md",
+      "x": 600,
+      "y": 650,
+      "width": 480,
+      "height": 220
+    },
+    {
+      "id": "new-2",
+      "type": "file",
+      "file": "10 Учёба/Кострыкин/Делимость целых чисел, НОД и НОК.md",
+      "x": 1200,
+      "y": 650,
+      "width": 480,
+      "height": 220
+    }
+  ],
+  "edges": [
+    {
+      "id": "contains",
+      "fromNode": "course",
+      "fromSide": "bottom",
+      "toNode": "systems",
+      "toSide": "top"
+    },
+    {
+      "id": "contains-sets",
+      "fromNode": "course",
+      "fromSide": "bottom",
+      "toNode": "sets",
+      "toSide": "top"
+    },
+    {
+      "id": "contains-new-0",
+      "fromNode": "course",
+      "fromSide": "bottom",
+      "toNode": "new-0",
+      "toSide": "top"
+    },
+    {
+      "id": "contains-new-1",
+      "fromNode": "course",
+      "fromSide": "bottom",
+      "toNode": "new-1",
+      "toSide": "top"
+    },
+    {
+      "id": "contains-new-2",
+      "fromNode": "course",
+      "fromSide": "bottom",
+      "toNode": "new-2",
+      "toSide": "top"
+    },
+    {
+      "id": "cycles-sign",
+      "fromNode": "new-0",
+      "fromSide": "right",
+      "toNode": "new-1",
+      "toSide": "left"
+    }
+  ]
 }
