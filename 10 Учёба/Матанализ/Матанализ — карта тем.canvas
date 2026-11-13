@@ -149,6 +149,24 @@
       "width": 380,
       "height": 260,
       "color": "5"
+    },
+    {
+      "id": "matan-20261113-0",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Асимптотическое сравнение функций.md",
+      "x": 2100,
+      "y": 0,
+      "width": 550,
+      "height": 320
+    },
+    {
+      "id": "matan-20261113-1",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Непрерывность функций.md",
+      "x": 2100,
+      "y": 450,
+      "width": 550,
+      "height": 320
     }
   ],
   "edges": [
@@ -262,6 +280,20 @@
       "toNode": "topic-4",
       "toEnd": "arrow",
       "label": "зажатие через целую часть"
+    },
+    {
+      "id": "matan-20261113-0-edge",
+      "fromNode": "matan-function-limit",
+      "fromSide": "right",
+      "toNode": "matan-20261113-0",
+      "toSide": "left"
+    },
+    {
+      "id": "matan-20261113-1-edge",
+      "fromNode": "matan-function-limit",
+      "fromSide": "right",
+      "toNode": "matan-20261113-1",
+      "toSide": "left"
     }
   ]
 }
