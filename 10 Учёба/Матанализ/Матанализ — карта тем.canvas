@@ -167,6 +167,15 @@
       "y": 450,
       "width": 550,
       "height": 320
+    },
+    {
+      "id": "binomial-newton",
+      "type": "file",
+      "x": -420,
+      "y": 420,
+      "width": 340,
+      "height": 240,
+      "file": "10 Учёба/Матанализ/Бином Ньютона.md"
     }
   ],
   "edges": [
@@ -294,6 +303,14 @@
       "fromSide": "right",
       "toNode": "matan-20261113-1",
       "toSide": "left"
+    },
+    {
+      "id": "binomial-to-e",
+      "fromNode": "binomial-newton",
+      "fromSide": "right",
+      "toNode": "topic-4",
+      "toSide": "left",
+      "label": "Биномиальное разложение"
     }
   ]
 }
