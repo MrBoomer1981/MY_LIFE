@@ -35,7 +35,7 @@
 		{"id":"lect2026_4","type":"file","file":"10 Учёба/Линейная алгебра/Замена базиса и преобразование координат.md","x":2560,"y":660,"width":560,"height":170},
 		{"id":"theme_group_5","type":"group","x":3180,"y":-70,"width":600,"height":310,"label":"Обозначения"},
 		{"id":"t23","type":"file","file":"10 Учёба/Линейная алгебра/Обозначения и уточнения в линейной алгебре.md","x":3200,"y":0,"width":560,"height":170},
-		{"id": "tensor20261117", "type": "file", "file": "10 Учёба/Линейная алгебра/Тензоры и закон преобразования компонент.md", "x": 2560, "y": 880, "width": 560, "height": 170}
+		{"id":"tensor20261117","type":"file","file":"10 Учёба/Линейная алгебра/Тензоры и закон преобразования компонент.md","x":2560,"y":880,"width":560,"height":170}
 	],
 	"edges":[
 		{"id":"e0_1","fromNode":"t0","toNode":"t1","fromSide":"bottom","toSide":"top","toEnd":"arrow","label":"аксиомы"},
@@ -68,6 +68,6 @@
 		{"id":"lect2026_edge5","fromNode":"lect2026_3","fromSide":"right","toNode":"lect2026_4","toSide":"left"},
 		{"id":"lect2026_edge6","fromNode":"lect2026_2","fromSide":"right","toNode":"t12","toSide":"left"},
 		{"id":"lect2026_edge7","fromNode":"lect2026_1","fromSide":"right","toNode":"t19","toSide":"left"},
-		{"id": "tensor_basis20261117", "fromNode": "lect2026_4", "toNode": "tensor20261117", "fromSide": "bottom", "toSide": "top", "toEnd": "arrow", "label": "общий закон компонент"}
+		{"id":"tensor_basis20261117","fromNode":"lect2026_4","toNode":"tensor20261117","fromSide":"bottom","toSide":"top","toEnd":"arrow","label":"общий закон компонент"}
 	]
 }
