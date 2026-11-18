@@ -26,7 +26,8 @@
 		{"id":"t23","type":"file","file":"10 Учёба/Дискретная математика/Задача коммивояжёра и метод ветвей и границ.md","x":840,"y":1740,"width":380,"height":210},
 		{"id":"t24","type":"file","file":"10 Учёба/Дискретная математика/Раскраски графов и клики.md","x":1260,"y":1740,"width":380,"height":210},
 		{"id":"t25","type":"file","file":"10 Учёба/Дискретная математика/Двудольные графы, паросочетания и факторы.md","x":1680,"y":1740,"width":380,"height":210},
-		{"id":"t26","type":"file","file":"10 Учёба/Дискретная математика/Планарность и формула Эйлера.md","x":2100,"y":1740,"width":380,"height":210}
+		{"id":"t26","type":"file","file":"10 Учёба/Дискретная математика/Планарность и формула Эйлера.md","x":2100,"y":1740,"width":380,"height":210},
+		{"id":"bool-pol","type":"file","file":"10 Учёба/Дискретная математика/Сохранение отношений и полиморфизмы.md","x":2100,"y":580,"width":380,"height":210}
 	],
 	"edges":[
 		{"id":"e000","fromNode":"t00","fromSide":"right","toNode":"t01","toSide":"left"},
@@ -54,6 +55,8 @@
 		{"id":"e022","fromNode":"t17","fromSide":"bottom","toNode":"t26","toSide":"top"},
 		{"id":"e023","fromNode":"t21","fromSide":"bottom","toNode":"t22","toSide":"top"},
 		{"id":"e024","fromNode":"t16","fromSide":"bottom","toNode":"t23","toSide":"top"},
-		{"id":"e025","fromNode":"t24","fromSide":"bottom","toNode":"t25","toSide":"top"}
+		{"id":"e025","fromNode":"t24","fromSide":"bottom","toNode":"t25","toSide":"top"},
+		{"id":"pol-from-t09","fromNode":"t09","fromSide":"right","toNode":"bool-pol","toSide":"left"},
+		{"id":"pol-from-t01","fromNode":"t01","fromSide":"right","toNode":"bool-pol","toSide":"left"}
 	]
 }
