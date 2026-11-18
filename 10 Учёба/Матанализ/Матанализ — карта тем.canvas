@@ -176,6 +176,24 @@
       "width": 340,
       "height": 240,
       "file": "10 Учёба/Матанализ/Бином Ньютона.md"
+    },
+    {
+      "id": "integrals-0",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Первообразная и неопределённый интеграл.md",
+      "x": -420,
+      "y": 780,
+      "width": 350,
+      "height": 240
+    },
+    {
+      "id": "integrals-1",
+      "type": "file",
+      "file": "10 Учёба/Матанализ/Определённый интеграл и формула Ньютона–Лейбница.md",
+      "x": -20,
+      "y": 780,
+      "width": 350,
+      "height": 240
     }
   ],
   "edges": [
@@ -311,6 +329,14 @@
       "toNode": "topic-4",
       "toSide": "left",
       "label": "Биномиальное разложение"
+    },
+    {
+      "id": "integrals-order",
+      "fromNode": "integrals-0",
+      "fromSide": "right",
+      "toNode": "integrals-1",
+      "toSide": "left",
+      "label": "Первообразная и накопление"
     }
   ]
 }
